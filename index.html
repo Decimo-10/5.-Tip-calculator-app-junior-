@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Tip calculator app</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <img src="images/logo.svg" alt="Splitter" class="logo">
+  </header>
+  <main class="main">
+    <div class="input">
+      <div class="label-wrapper">
+        <label for="bill-input" class="input__label">Bill</label>
+        <span class="input__error-message">Can't be zero</span>
+      </div>
+      <input type="text" id="bill-input" class="input__field" placeholder="0" inputmode="numeric" pattern="[1-9][0-9]*\.?[0-9]*">
+      <div class="input__label">Select Tip %</div>
+      <div class="input__tip-wrapper">
+        <button class="input__tip" value="5">5%</button>
+        <button class="input__tip" value="10">10%</button>
+        <button class="input__tip" value="15">15%</button>
+        <button class="input__tip" value="25">25%</button>
+        <button class="input__tip" value="50">50%</button>
+        <input type="text" placeholder="Custom" class="input__tip input__tip--field" inputmode="numeric" pattern="[1-9][0-9]*">
+      </div>
+      <div class="label-wrapper">
+        <label for="people-input" class="input__label">Number of People</label>
+        <span class="input__error-message">Can't be zero</span>
+      </div>
+      <input type="text" id="people-input" class="input__field input__field--people" placeholder="0" inputmode="numeric" pattern="[1-9][0-9]*">
+    </div>
+    <div class="output">
+      <div class="output__wrapper">
+        <div class="output__big-text">Tip Amount</div>
+        <div class="output__small-text">/ person</div>
+        <div class="output__amount">$0.00</div>
+      </div>
+      <div class="output__wrapper">
+        <div class="output__big-text">Total</div>
+        <div class="output__small-text">/ person</div>
+        <div class="output__amount">$0.00</div>
+      </div>
+      <button class="output__reset disabled">Reset</button>
+    </div>
+  </main>
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://www.frontendmentor.io/profile/Decimo-10" target="_blank">Decimo-10</a>.
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,205 @@
+@font-face {
+    font-family: "Space Mono";
+    src: url(fonts/SpaceMono-Bold.ttf);
+}
+
+html{
+    font-family: "Space Mono", Arial, Helvetica, sans-serif;
+    font-size: 100%;
+}
+
+body{
+    margin: 0 auto;
+    background-color:  hsl(185, 41%, 84%);
+}
+
+main{
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 1.75rem;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 1.5rem;
+}
+
+footer{
+    margin: 50px auto;
+    max-width: 50ch;
+}
+
+.logo{
+    display: block;
+    margin: 50px auto;
+}
+
+/* --------------- */
+/* Input fields */
+
+.label-wrapper{/* Container that wraps the input label and error message */
+    display: inline-flex;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    justify-content: space-between;
+}
+.input__label{
+    color: hsl(184, 14%, 56%);
+}
+.input__error-message{/* Can't be zero error message */
+    display: none;
+    color: orangered;
+}
+.input__field{
+    display:block;
+    width:100%;/* Don't know why it isn't 100% by default despite setting "display:block".*/
+    margin-bottom: 2rem;
+    box-sizing: border-box;/* Need this because of the "width: 100%". Without this the input field will overflow/break out. */
+    padding: 10px 15px;
+    background-color:  hsl(189, 41%, 97%);
+    background-image: url("images/icon-dollar.svg");
+    background-repeat: no-repeat;
+    background-size: auto 75% ;
+    background-position: left center;
+    background-origin: content-box;
+    border: none;
+    border-radius: 0.25rem;
+    font-family: "Space Mono", Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    text-align: right;
+    color:  hsl(183, 100%, 15%);
+}
+.input__field:is(:focus, :hover){
+    outline:2px solid hsl(172, 67%, 45%);
+}
+.input__field:invalid{
+    outline: 2px solid orangered;
+}
+.input__field::placeholder{
+    color: hsl(184, 14%, 56%);
+}
+.input__field--people{
+    background-image: url(images/icon-person.svg);
+}
+
+/* ----------------- */
+/* Fixed tip buttons(5%,10%,etc.) */
+
+.input__tip-wrapper{/* Wrapper for tip buttons and custom tip field */
+    display: grid;
+    margin: 0.75rem 0 2rem 0;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+.input__tip{
+    display: block;
+    padding: 0.25em;
+    border:none;
+    border-radius: 0.25rem;
+    background-color: hsl(183, 100%, 15%);
+    font-family: "Space Mono", Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    color: hsl(0, 0%, 100%);
+}
+.input__tip:is(:focus, :hover){
+    outline: none;
+    background-color: hsl(172, 67%, 85%);
+    color: hsl(183, 100%, 15%);
+}
+.input__tip--field{
+    min-width: 50px;/* Needed this because by default it had a min. width from which did not go smaller. */
+    background-color: hsl(189, 41%, 97%);
+    color:  hsl(183, 100%, 15%);
+    text-align: right;
+}
+.input__tip--field:is(:focus, :hover){
+    background-color: hsl(189, 41%, 97%);
+    outline:2px solid hsl(172, 67%, 45%);
+}
+.input__tip--field:invalid{
+    outline: 2px solid orangered;
+}
+.input__tip--field::placeholder{
+    color: hsl(183, 100%, 15%);
+    opacity: 0.7;
+}
+
+
+/* ------------ */
+/* Output where results are displayed + reset button */
+
+.output{
+    padding: 1.5rem;
+    border-radius: 1rem;
+    background-color: hsl(183, 100%, 15%);
+}
+.output__wrapper{
+    display: grid;
+    margin: 1.5rem 0;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+.output__amount{
+    grid-row: 1 / -1;
+    grid-column: 2 / 3;
+    font-size: 2rem;
+    text-align: right;
+    color: hsl(172, 67%, 45%);
+}
+.output__big-text{
+    color: hsl(0, 0%, 100%);
+}
+.output__small-text{
+    color: hsl(184, 14%, 56%);
+}
+.output__reset{
+    display: block;
+    padding: 0.5em;
+    width: 100%;
+    border: none;
+    border-radius: 0.25rem;
+    background-color: hsl(172, 67%, 45%);
+    font-family: "Space Mono", Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+.output__reset:is(:focus, :hover){
+    background-color: hsl(172, 67%, 85%);
+}
+
+/* ------------------- */
+/* for JS to add/remove these styles to indicate selected tip*/
+
+.active-btn{
+    background-color: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+}
+.active-custom-tip{
+    background-color: hsl(189, 41%, 97%);
+    outline:2px solid hsl(172, 67%, 45%);
+}
+.disabled{/* Disable reset button */
+    pointer-events: none;
+    opacity: 0.3;
+}
+
+/* ---------- */
+
+@media(min-width: 1000px){
+    .main{
+        display: grid;
+        max-width: 900px;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        
+    }
+    .output{
+        display: grid;
+        padding: 3rem;;
+        grid-template-rows: auto auto 1fr;
+    }
+    .output__reset{
+        padding: 1rem;
+        align-self: flex-end;
+    }
+    .input__tip-wrapper{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
