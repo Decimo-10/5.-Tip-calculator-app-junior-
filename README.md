@@ -14,8 +14,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Tip calculator app](- Solution URL: [Add solution URL here](https://your-solution-url.com)
-)
+- Live Site URL: [Tip calculator app](https://decimo-10.github.io/5.-Tip-calculator-app-junior-/)
 
 ### Built with
 
@@ -27,7 +26,7 @@ Users should be able to:
 ### What I learned
 
 - Form elements don't inherit font settings.
-- <label> by default is not focusable.
+- \<label\> by default is not focusable.
 - The "onchange" and "keyup" events.
 
 
