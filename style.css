@@ -139,7 +139,7 @@ footer{
 .output__amount{
     grid-row: 1 / -1;
     grid-column: 2 / 3;
-    font-size: 2rem;
+    font-size: 3rem;
     text-align: right;
     color: hsl(172, 67%, 45%);
 }
